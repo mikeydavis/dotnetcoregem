@@ -1,0 +1,8 @@
+/Users/mikedavis/development/aspnetcore/bin/Debug/netcoreapp1.1/aspnetcore.deps.json
+/Users/mikedavis/development/aspnetcore/bin/Debug/netcoreapp1.1/aspnetcore.runtimeconfig.json
+/Users/mikedavis/development/aspnetcore/bin/Debug/netcoreapp1.1/aspnetcore.runtimeconfig.dev.json
+/Users/mikedavis/development/aspnetcore/bin/Debug/netcoreapp1.1/aspnetcore.dll
+/Users/mikedavis/development/aspnetcore/bin/Debug/netcoreapp1.1/aspnetcore.pdb
+/Users/mikedavis/development/aspnetcore/obj/Debug/netcoreapp1.1/aspnetcore.AssemblyInfo.cs
+/Users/mikedavis/development/aspnetcore/obj/Debug/netcoreapp1.1/aspnetcore.dll
+/Users/mikedavis/development/aspnetcore/obj/Debug/netcoreapp1.1/aspnetcore.pdb
