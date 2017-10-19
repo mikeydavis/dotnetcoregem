@@ -14,13 +14,14 @@ namespace aspnetcore.Controllers
         public IActionResult Index()
         {
             var quotes = new testContext().Quotes.ToList();
-            
 
-            return View();
+
+            return View(quotes);
         }
 
         public IActionResult About()
         {
+            
             ViewData["Message"] = "Your application description page.";
 
             return View();
