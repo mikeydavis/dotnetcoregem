@@ -9,12 +9,12 @@ namespace aspnetcore.Controllers
 {
     public class HomeController : Controller
     {
-         private readonly QuoteContext _context;
+         //private readonly QuoteContext _context;
 
-        public HomeController(QuoteContext context)
-        {
-            _context = context;
-        }
+        //public HomeController(QuoteContext context)
+        //{
+        //    _context = context;
+        //}
         public IActionResult Index()
         {
             //var quotes = _context.Quotes.ToList();
