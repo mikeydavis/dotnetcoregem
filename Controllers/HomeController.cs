@@ -13,7 +13,7 @@ namespace aspnetcore.Controllers
 
         public IActionResult Index()
         {
-            var quotes = new testContext().Quotes.ToList();
+            var quotes = new QuoteContext().Quotes.ToList();
 
 
             return View(quotes);
