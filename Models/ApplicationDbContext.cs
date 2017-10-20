@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace Conference.Models
+namespace Models
 {
     public class ApplicationDbContext : DbContext
     {

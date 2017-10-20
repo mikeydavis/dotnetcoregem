@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Conference.Models;
+using Models;
 
 namespace aspnetcore.Controllers
 {
     public class HomeController : Controller
     {
-         //private readonly QuoteContext _context;
+        //private readonly QuoteContext _context;
 
         //public HomeController(QuoteContext context)
         //{
@@ -17,7 +17,7 @@ namespace aspnetcore.Controllers
         //}
         public IActionResult Index()
         {
-            var quotes = new Conference.Models.QuotesContext().Quotes.ToList();
+            var quotes = new Models.QuotesContext().Quotes.ToList();
             return View(quotes);
         }
 

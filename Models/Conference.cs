@@ -1,4 +1,4 @@
-namespace Conference.Models
+namespace Models
 {
     public class Conference
     {
