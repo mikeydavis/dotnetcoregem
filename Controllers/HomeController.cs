@@ -17,9 +17,9 @@ namespace aspnetcore.Controllers
         //}
         public IActionResult Index()
         {
-            //var quotes = _context.Quotes.ToList();
+            var quotes = new QuotesContext().Quotes.ToList();
             //return View(quotes);
-            return View();
+            return View(quotes);
         }
 
         public IActionResult About()
