@@ -32,7 +32,7 @@ namespace aspnetcore
         {
             // Add framework services.
             services.AddMvc();
-            services.AddDbContext<ApplicationDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddDbContext<ApplicationDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
             //services.AddDbContext<QuoteContext>(options => options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
         }
 

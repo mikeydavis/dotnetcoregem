@@ -11,8 +11,8 @@ namespace aspnetcore.Controllers
     {
         public IActionResult Index()
         {
-            var quotes = new Models.QuotesContext().Quotes.ToList();
-            return View(quotes);
+            //var quotes = new Models.QuotesContext().Quotes.ToList();
+            return View();
         }
 
         public IActionResult About()
