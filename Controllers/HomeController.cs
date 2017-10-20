@@ -17,8 +17,7 @@ namespace aspnetcore.Controllers
         //}
         public IActionResult Index()
         {
-            var quotes = new QuotesContext().Quotes.ToList();
-            //return View(quotes);
+            var quotes = new Conference.Models.QuotesContext().Quotes.ToList();
             return View(quotes);
         }
 
