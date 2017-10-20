@@ -19,7 +19,7 @@ namespace aspnetcore.Controllers
         {
             //var quotes = _context.Quotes.ToList();
             //return View(quotes);
-            return View
+            return View();
         }
 
         public IActionResult About()
