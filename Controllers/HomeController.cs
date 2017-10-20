@@ -7,19 +7,19 @@ using Conference.Models;
 
 namespace aspnetcore.Controllers
 {
-    
     public class HomeController : Controller
     {
          private readonly QuoteContext _context;
 
-         public HomeController(QuoteContext context)
+        public HomeController(QuoteContext context)
         {
             _context = context;
         }
         public IActionResult Index()
         {
-            var quotes =  _context.Quotes.ToList();
-            return View(quotes);
+            //var quotes = _context.Quotes.ToList();
+            //return View(quotes);
+            return View
         }
 
         public IActionResult About()
