@@ -8,9 +8,15 @@ namespace Controllers
 {
     public class HomeController : Controller
     {
+         [HttpGet]
+        public IEnumerable<Quotes> GetAll()
+        {
+            var  quotes = new QuotesContext().Quotes.ToList();
+            return quotes;
+        }
         public IActionResult Index()
         {
-            var quotes = new QuotesContext().Quotes.ToList();
+            
             return View();
         }
 
