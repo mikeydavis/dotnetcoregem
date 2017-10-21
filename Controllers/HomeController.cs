@@ -14,6 +14,12 @@ namespace Controllers
             QuotesContext qc = new QuotesContext();
             //return quotes;
         }
+
+        [HttpGet]
+        public JsonResult Get(string credit)
+        {
+            return Json(new QuotesContext().Quotes.ToList());
+        }
         public IActionResult Index()
         {
             var  quotes = new QuotesContext().Quotes.ToList();
