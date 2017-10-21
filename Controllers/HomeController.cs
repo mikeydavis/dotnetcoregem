@@ -16,8 +16,8 @@ namespace Controllers
         }
         public IActionResult Index()
         {
-            
-            return View();
+            var  quotes = new QuotesContext().Quotes.ToList();
+            return View(quotes);
         }
 
         public IActionResult About()
@@ -78,5 +78,4 @@ namespace Controllers
         public string Credit { get; set; }
         public string Quote { get; set; }
     }
-//}
 }
