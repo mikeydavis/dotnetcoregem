@@ -22,7 +22,7 @@ namespace Controllers
         }
         public IActionResult Index()
         {
-            var  quotes = new QuotesContext1().Quotes.ToList();
+            var  quotes = new QuotesContext().Quotes.ToList();
             return View(quotes);
         }
 
