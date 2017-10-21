@@ -4,12 +4,9 @@ using System.Linq;
 
 namespace aspnetcore
 {
-    
-    
     [Route("api/[controller]")]
     public class QuotesController : Controller
     {
-        
         [HttpGet]
         [Route("")]
         public IEnumerable<Quotes1> Get()
