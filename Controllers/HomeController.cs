@@ -8,11 +8,10 @@ namespace Controllers
 {
     public class HomeController : Controller
     {
-         [HttpGet]
-        public IEnumerable<Quotes> GetAll()
+        public void GetAll()
         {
-            var  quotes = new QuotesContext().Quotes.ToList();
-            return quotes;
+            QuotesContext qc = new QuotesContext();
+            //return quotes;
         }
         public IActionResult Index()
         {
