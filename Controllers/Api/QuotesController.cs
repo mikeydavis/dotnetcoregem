@@ -26,5 +26,20 @@ namespace aspnetcore
             return new ObjectResult(item);
         }
 
+        [HttpPost]
+        public IActionResult Create([FromBody] Quotes1 quote)
+        {
+            if (quote == null)
+            {
+                return BadRequest();
+            }
+
+            var  context = new QuotesContext1();
+            context.Add(quote);
+            context.SaveChanges();
+        
+            return CreatedAtRoute("GetQuotes", new { id = quote.Id}, quote);
+        }
+
     }
 }
