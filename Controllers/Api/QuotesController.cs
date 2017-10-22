@@ -41,6 +41,31 @@ namespace aspnetcore
             return CreatedAtRoute("GetQuotes", new { id = quote.Id}, quote);
         }
 
+
+        [HttpPut("{id}")]
+        public IActionResult Update(long id, [FromBody] Quotes1 item)
+        {
+            if (item == null || item.Id != id)
+            {
+                return BadRequest();
+            }
+
+            var  context = new QuotesContext1();
+
+            var quote = context.Quotes.FirstOrDefault(t => t.Id == id);
+            if (quote == null)
+            {
+                return NotFound();
+            }
+
+            quote.Credit = item.Credit;
+            quote.Quote = item.Quote;
+
+            context.Quotes.Update(quote);
+            context.SaveChanges();
+            return new NoContentResult();
+        }
+
         [HttpDelete("{id}")]
         public IActionResult Delete(long id)
         {
