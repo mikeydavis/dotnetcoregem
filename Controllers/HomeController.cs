@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Controllers
 {
@@ -20,9 +21,9 @@ namespace Controllers
         {
             return Json(new QuotesContext().Quotes.ToList());
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var  quotes = new QuotesContext().Quotes.ToList();
+            var  quotes = await new QuotesContext().Quotes.ToListAsync();
             return View(quotes);
         }
 
