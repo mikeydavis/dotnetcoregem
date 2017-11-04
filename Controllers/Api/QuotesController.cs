@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using Models;
 
 namespace aspnetcore
 {
@@ -12,6 +13,8 @@ namespace aspnetcore
         public IEnumerable<Quotes1> Get()
         {
             var  quotes = new QuotesContext1().Quotes.ToList();
+            var search = quotes.Where(x => x.Credit == "mike");
+
             return quotes;
         }
 
@@ -27,6 +30,7 @@ namespace aspnetcore
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create([FromBody] Quotes1 quote)
         {
             if (quote == null)

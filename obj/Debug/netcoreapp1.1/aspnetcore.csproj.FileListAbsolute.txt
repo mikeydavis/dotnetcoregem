@@ -6,3 +6,13 @@
 /Users/mikedavis/development/aspnetcore/obj/Debug/netcoreapp1.1/aspnetcore.AssemblyInfo.cs
 /Users/mikedavis/development/aspnetcore/obj/Debug/netcoreapp1.1/aspnetcore.dll
 /Users/mikedavis/development/aspnetcore/obj/Debug/netcoreapp1.1/aspnetcore.pdb
+/Users/mikedavis/development/dotnetcoregem/bin/Debug/netcoreapp1.1/aspnetcore.deps.json
+/Users/mikedavis/development/dotnetcoregem/bin/Debug/netcoreapp1.1/aspnetcore.runtimeconfig.json
+/Users/mikedavis/development/dotnetcoregem/bin/Debug/netcoreapp1.1/aspnetcore.runtimeconfig.dev.json
+/Users/mikedavis/development/dotnetcoregem/bin/Debug/netcoreapp1.1/aspnetcore.dll
+/Users/mikedavis/development/dotnetcoregem/bin/Debug/netcoreapp1.1/aspnetcore.pdb
+/Users/mikedavis/development/dotnetcoregem/obj/Debug/netcoreapp1.1/aspnetcore.csproj.CoreCompileInputs.cache
+/Users/mikedavis/development/dotnetcoregem/obj/Debug/netcoreapp1.1/aspnetcore.AssemblyInfoInputs.cache
+/Users/mikedavis/development/dotnetcoregem/obj/Debug/netcoreapp1.1/aspnetcore.AssemblyInfo.cs
+/Users/mikedavis/development/dotnetcoregem/obj/Debug/netcoreapp1.1/aspnetcore.dll
+/Users/mikedavis/development/dotnetcoregem/obj/Debug/netcoreapp1.1/aspnetcore.pdb
