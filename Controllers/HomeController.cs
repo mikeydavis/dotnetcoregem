@@ -52,8 +52,8 @@ namespace Controllers
             }
             string quot = model.Quote;
             var  context = new QuotesContext1();
-            //context.Add(model);
-            //context.SaveChanges();
+            context.Add(model);
+            context.SaveChanges();
             //return  CreatedAtRoute("GetQuotes", new { id = model.Id}, model);
             //return View("",model.Quote);
             var  quotes = new  QuotesContext1().Quotes.ToList<Quotes1>();
