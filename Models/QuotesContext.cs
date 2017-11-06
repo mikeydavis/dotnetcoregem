@@ -3,15 +3,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Models;
 
-//namespace Models
-//{
+namespace Models
+{
     public class QuotesContext1 : DbContext
     {
         public DbSet<Quotes1> Quotes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql(@"Server=midax-a-minjs-rds.cuxi7qfyfqir.us-west-2.rds.amazonaws.com;User Id=admin;Password=Aneeka97;Database=test");
+            optionsBuilder.UseMySql(@"Server=midax-a-minjs-rds.cuxi7qfyfqir.us-west-2.rds.amazonaws.com;User Id=mikie;Password=mi4;Database=test");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -34,4 +34,4 @@ using Models;
             });
         }
     }
-//}
+}

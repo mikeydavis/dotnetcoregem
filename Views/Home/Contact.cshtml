@@ -1,20 +1,13 @@
-﻿
+﻿@model Models.Quotes1
 @{
     ViewData["Title"] = "Contact";
 }
+<h3>Create Quote</h3>
 
-
-
-
-
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<form method="post">
+    <label asp-for="Quote"></label>
+    <input asp-for="Quote" /><br />
+    <label asp-for="Credit"></label>
+    <input asp-for="Credit" /><br />
+    <button type="submit">Post</button>
+</form>

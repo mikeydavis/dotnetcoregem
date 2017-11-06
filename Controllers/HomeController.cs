@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Models;
 
 namespace Controllers
 {
@@ -19,11 +20,11 @@ namespace Controllers
         [HttpGet]
         public JsonResult Get(string credit)
         {
-            return Json(new QuotesContext().Quotes.ToList());
+            return Json(new QuotesContext1().Quotes.ToList());
         }
         public async Task<IActionResult> Index()
         {
-            var  quotes = await new QuotesContext().Quotes.ToListAsync();
+            var  quotes = await new  QuotesContext1().Quotes.ToListAsync();
             return View(quotes);
         }
 
@@ -34,13 +35,31 @@ namespace Controllers
 
             return View();
         }
-
+        [HttpGet("Contact")]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
 
             return View();
         }
+        [HttpPost("Contact")]
+        public IActionResult Contact(Quotes1 model)
+        {
+            //ViewData["Message"] = "Your contact page.";
+            if (model.Credit == null)
+            {
+                return BadRequest();
+            }
+            string quot = model.Quote;
+            var  context = new QuotesContext1();
+            //context.Add(model);
+            //context.SaveChanges();
+            //return  CreatedAtRoute("GetQuotes", new { id = model.Id}, model);
+            //return View("",model.Quote);
+            var  quotes = new  QuotesContext1().Quotes.ToList<Quotes1>();
+            return View("Index", quotes);
+        }
+
 
         public IActionResult Error()
         {
