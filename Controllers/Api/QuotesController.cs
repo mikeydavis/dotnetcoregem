@@ -45,9 +45,9 @@ namespace aspnetcore
                 return BadRequest();
             }
 
-            var  context = new QuotesContext();
-            context.Add(quote);
-            context.SaveChanges();
+        
+            _context.Add(quote);
+            _context.SaveChanges();
         
             return CreatedAtRoute("GetQuotes", new { id = quote.Id}, quote);
         }
