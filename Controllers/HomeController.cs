@@ -11,6 +11,10 @@ namespace Controllers
 {
     public class HomeController : Controller
     {
+        private QuotesContext _context;
+        public HomeController(QuotesContext context){
+            _context = context;
+        }
         public void GetAll()
         {
             QuotesContext qc = new QuotesContext();
@@ -20,19 +24,18 @@ namespace Controllers
         [HttpGet]
         public JsonResult Get(string credit)
         {
-            return Json(new QuotesContext1().Quotes.ToList());
+            return Json(new QuotesContext().Quotes.ToList());
         }
         public async Task<IActionResult> Index()
         {
-            var  quotes = await new  QuotesContext1().Quotes.ToListAsync();
+            var quotes = await _context.Quotes.ToListAsync();
+            //var  quotes = await new  QuotesContext1().Quotes.ToListAsync();
             return View(quotes);
         }
 
         public IActionResult About()
         {
-            
             ViewData["Message"] = "Your application description page.";
-
             return View();
         }
         [HttpGet("Contact")]
@@ -43,7 +46,7 @@ namespace Controllers
             return View();
         }
         [HttpPost("Contact")]
-        public IActionResult Contact(Quotes1 model)
+        public IActionResult Contact(Quotes model)
         {
             //ViewData["Message"] = "Your contact page.";
             if (model.Credit == null)
@@ -51,12 +54,12 @@ namespace Controllers
                 return BadRequest();
             }
             string quot = model.Quote;
-            var  context = new QuotesContext1();
+            var  context = new QuotesContext();
             context.Add(model);
             context.SaveChanges();
             //return  CreatedAtRoute("GetQuotes", new { id = model.Id}, model);
             //return View("",model.Quote);
-            var  quotes = new  QuotesContext1().Quotes.ToList<Quotes1>();
+            var  quotes = new  QuotesContext().Quotes.ToList<Quotes>();
             return View("Index", quotes);
         }
 
@@ -68,7 +71,7 @@ namespace Controllers
     }
 
 
-    public class QuotesContext : DbContext
+    public class QuotesContext1 : DbContext
     {
         public DbSet<Quotes> Quotes { get; set; }
 
@@ -98,7 +101,7 @@ namespace Controllers
         }
     }
 
-    public class Quotes
+    public class Quotes1
     {
         public int Id { get; set; }
         public string Credit { get; set; }

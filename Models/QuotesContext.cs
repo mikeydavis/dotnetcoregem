@@ -5,9 +5,9 @@ using Models;
 
 namespace Models
 {
-    public class QuotesContext1 : DbContext
+    public class QuotesContext : DbContext
     {
-        public DbSet<Quotes1> Quotes { get; set; }
+        public DbSet<Quotes> Quotes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -16,7 +16,7 @@ namespace Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Quotes1>(entity =>
+            modelBuilder.Entity<Quotes>(entity =>
             {
                 entity.ToTable("quotes");
 

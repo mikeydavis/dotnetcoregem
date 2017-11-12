@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using MySQL.Data.EntityFrameworkCore;
+using Models;
 
 namespace aspnetcore
 {
@@ -31,8 +32,7 @@ namespace aspnetcore
         {
             // Add framework services.
             services.AddMvc();
-            //services.AddDbContext<ApplicationDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
-            //services.AddDbContext<QuoteContext>(options => options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<QuotesContext>(options => options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

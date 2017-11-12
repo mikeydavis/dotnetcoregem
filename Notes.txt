@@ -1,0 +1,3 @@
+Kendo ui getting started bower
+https://docs.telerik.com/kendo-ui/intro/installation/bower-install
+bower info kendo-ui --verbose

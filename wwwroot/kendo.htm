@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Kendo UI Snippet</title>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.common.min.css"/>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.rtl.min.css"/>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.silver.min.css"/>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.3.1026/styles/kendo.mobile.all.min.css"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2017.3.1026/js/kendo.all.min.js"></script>
+    <style>
+        .form
+        {
+            padding: 0 2em;
+        }
+        .form:after
+        {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        dl, dt, dd
+        {
+            margin: 0;
+            padding: 0;
+        }
+
+        dt, dd
+        {
+            float: left;
+            margin-top: 1em;
+        }
+        dt
+        {
+            clear: left;
+            text-align: right;
+            width: 6em;
+            margin-right: 2em;
+            line-height: 2.4;
+        }
+        .grid {
+            margin: 2em;
+        }
+</style>
+</head>
+<body>
+    <div class="form">
+    <dl>
+        <dt>Type</dt>
+        <dd>
+            <select data-role="dropdownlist" 
+                    data-bind="source: type, value: expenseType" 
+                    data-text-field="name" 
+                    data-value-field="value"></select>
+        </dd>
+        <dt>Merchant</dt>
+        <dd><input id="merchant" class="k-textbox" data-bind="value:merchant" type="text" /></dd>
+        <dt>Amount</dt>
+        
+        <dd><input id="amount" type="text" data-bind="value: amount" data-role="numerictextbox" /></dd>
+    </dl>
+        <dt>&nbsp;</dt>
+        <dd><button id="create" class="k-button" data-bind="click: create">Add</button></dd>
+    </div>
+
+    <div class="grid" data-role="grid" data-sortable="true" data-bind="source: expenses" data-columns='["Type", "Merchant", "Amount"]' data-scrollable="false"></div>
+
+    <script>
+    var viewModel = kendo.observable({
+    // the expenses array will hold the grid values
+    expenses: [],
+    // the type array populates the drop down
+    type: [{ name: "Food", value: "food"}, { name: "Clothing", value: "clothing"}, { name: "Bills", value: "bills" }],
+    // the expenseType holds the currently selected value of the dropdown list
+    expenseType: "food",
+    // the values are bound to the merchant and amount fields
+    merchant: null,
+    amount: null,
+    // the event executes on clicking the Add button
+    create: function(e) {         
+        // add the items to the array of expenses
+        this.get("expenses").push({Type: this.get("expenseType"), Merchant: this.get("merchant"), Amount: this.get("amount")});
+        // reset the form
+        this.set("expenseType", "food");
+        this.set("merchant", "");
+        this.set("amount", "");
+    }
+});
+// apply the bindings
+kendo.bind(document.body.children, viewModel);
+</script>
+</body>
+</html>
