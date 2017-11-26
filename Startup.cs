@@ -17,6 +17,7 @@ namespace aspnetcore
     {
         public Startup(IHostingEnvironment env)
         {
+            //builder pattern (fluent)
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)

@@ -8,9 +8,11 @@ namespace Models
     {
         [Required]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Give credit")]
+        [Display(Name = "Add Credit")]
         public string Credit { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Add your quote")]
+        [Display(Name = "Add Quote")]
         public string Quote { get; set; }
     }
 }

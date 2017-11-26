@@ -25,6 +25,7 @@ namespace Controllers
         {
             var quotes = await _context.Quotes.ToListAsync();
             return View(quotes);
+            
         }
 
         public IActionResult About()
@@ -36,21 +37,22 @@ namespace Controllers
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
-
+            
             return View();
         }
         [HttpPost("Contact")]
         public IActionResult Contact(Quotes model)
         {
             //ViewData["Message"] = "Your contact page.";
-            if (model.Credit == null)
-            {
-                return BadRequest();
+            if (ModelState.IsValid){
+                _context.Add(model);
+                _context.SaveChanges();
+                var quotes = _context.Quotes.ToList();
+                return View("Index", quotes);
             }
-            _context.Add(model);
-            _context.SaveChanges();
-            var quotes = _context.Quotes.ToList();
-            return View("Index", quotes);
+            
+            return View(model);
+            
         }
 
 

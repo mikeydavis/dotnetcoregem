@@ -14,3 +14,5 @@
 /Users/mikedavis/development/dotnetcoregem/obj/Debug/netcoreapp1.1/aspnetcore.AssemblyInfo.cs
 /Users/mikedavis/development/dotnetcoregem/obj/Debug/netcoreapp1.1/aspnetcore.dll
 /Users/mikedavis/development/dotnetcoregem/obj/Debug/netcoreapp1.1/aspnetcore.pdb
+/Users/mikedavis/development/dotnetcoregem/obj/Debug/netcoreapp1.1/aspnetcore.csproj.CoreCompileInputs.cache
+/Users/mikedavis/development/dotnetcoregem/obj/Debug/netcoreapp1.1/aspnetcore.AssemblyInfoInputs.cache
