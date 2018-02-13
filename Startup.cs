@@ -10,6 +10,10 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using MySQL.Data.EntityFrameworkCore;
 using Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.SpaServices.Webpack;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace aspnetcore
 {
@@ -31,9 +35,13 @@ namespace aspnetcore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
+            // Add framework services
             services.AddMvc();
             services.AddDbContext<QuotesContext>(options => options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
+            //register swagger generator
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1",  new Info { Title = "Contact", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,13 +60,24 @@ namespace aspnetcore
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseStaticFiles();
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json","My API v1");
+            });
 
+            app.UseStaticFiles();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            app.UseDeveloperExceptionPage();
+            app.UseBrowserLink();
+            app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
+            {
+                //HotModuleReplacement = true
             });
         }
     }

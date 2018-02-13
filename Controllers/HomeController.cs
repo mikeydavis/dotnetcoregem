@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -21,8 +22,14 @@ namespace Controllers
         {
             return Json(_context.Quotes);
         }
+
+        public async Task QuotesList(){
+            var list = await _context.Quotes.ToListAsync();
+        }
+
         public async Task<IActionResult> Index()
         {
+            
             var quotes = await _context.Quotes.ToListAsync();
             return View(quotes);
             
@@ -52,9 +59,7 @@ namespace Controllers
             }
             
             return View(model);
-            
         }
-
 
         public IActionResult Error()
         {
