@@ -10,8 +10,10 @@ export default class Counter extends React.Component {
   render() {
    return <div>
      <h2>Rep Counter</h2>
-      <p>This is a simple example of a React component.</p>    <p>Current count: <strong>{this.state.currentCount}</strong></p>
-  <button onClick={() => { this.incrementCounter()    
+      <p>This is a simple example of a React component.</p>    
+      <p>Current count: <strong>{this.state.currentCount}</strong></p>
+      <button className='btn-primary' onClick={() => 
+                        { this.incrementCounter()    
                         }}>Increment
    </button>
    </div>;
