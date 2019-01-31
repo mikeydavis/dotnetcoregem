@@ -4,3 +4,8 @@ bower info kendo-ui --verbose
 
 List<string> result = names.Split(',').ToList();
 
+mvc ui framework
+https://demo.aspnetawesome.com/
+http://mvc6-grid.azurewebsites.net/Grid/SourceUrl
+https://ej2.syncfusion.com/aspnetmvc/Grid/RowTemplate#/material
+
